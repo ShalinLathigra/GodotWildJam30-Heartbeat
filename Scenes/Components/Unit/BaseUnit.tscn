@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Resources/SpriteFrames/UnitFrames.tres" type="SpriteFrames" id=1]
+[ext_resource path="res://Scenes/Components/Unit/BaseUnit.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/Components/Unit/UnitSprite.gd" type="Script" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+
+[node name="Unit" type="Area2D"]
+angular_damp = 100.0
+collision_mask = 0
+script = ExtResource( 2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = ExtResource( 1 )
+animation = "Idle"
+frame = 4
+playing = true
+script = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
